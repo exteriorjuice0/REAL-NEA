@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Library</title>
+    </head>
+
+    <body>
+        
+        {% with messages = get_flashed_messages() %}
+            {% for message in messages %}
+                <div>{{message}}</div>
+            {% endfor %}
+
+        {% endwith %}
+
+    
+        <h2>Sign Up</h2>
+
+        <form action="/" method = "post">
+            <div>
+             <label for = "username">Username:</label>
+             <input type = "text" id = "username" placeholder="Enter Username" name = "username" required minlength="4" maxlength="16">
+            </div>
+            <div>
+             <label for = "password">Password:</label>
+             <input type = "password" id = "password" placeholder="Enter Password" name = "password" required minlength="8" maxlength="35">
+            </div>
+            <div>
+             <label for = "repassword">Confirm Password:</label>
+             <input type = "password" id = "repassword" placeholder="Confirm Password" name = "repassword" required minlength="8" maxlength="35">
+            </div>
+            <div>
+                <label for="librarianPermissions">Librarian Permissions:</label>
+                <input type = "checkbox" id = "librarianPermissions" name = "librarianPermissions" value = "True" >
+            </div>
+            <input type = "submit" value = "Sign Up">
+
+        </form>
+
+        <div>
+            <a href = "/">Already have an account?</a>
+        </div>
+
+    </body>
+</html>
